@@ -19,11 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-        </Routes>
-        <Routes>
           <Route exact path="/profile" element={<Profile />} />
-        </Routes>
-        <Routes>
           <Route exact path="/Signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
