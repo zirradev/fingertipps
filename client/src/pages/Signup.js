@@ -82,7 +82,12 @@ export default function ComposedTextField() {
             </FormHelperText>
           </FormControl>
           <FormControlLabel
-            control={<Checkbox value={checked} />}
+            control={
+              <Checkbox
+                value={checked}
+                style={{ color: "var(--color-blue)" }}
+              />
+            }
             label={
               <>
                 Agree with{" "}
