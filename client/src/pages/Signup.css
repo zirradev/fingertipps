@@ -1,13 +1,45 @@
-.signup_contents h1 {
+.title {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 1rem;
-    align-items: center;
+    margin-left: 1em;
 }
+
 
 .signup-form {
     padding: 2em;
     display: flex;
     flex-direction: column;
+}
+
+.signup-button {
+    align-items: center;
+}
+
+.signup-a-text {
+    text-align: center;
+
+    color: #fff;
+    background-color: var(--color);
+    border-radius: 2rem;
+}
+
+.divider {
+    display: flex;
+    flex-direction: row;
+    color: #9C9C9C;
+}
+
+.divider:before,
+.divider:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}
+
+.divider:before {
+    margin-right: 10px
+}
+
+.divider:after {
+    margin-left: 10px
 }

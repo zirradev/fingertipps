@@ -9,6 +9,8 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import "./Signup.css";
+import { AiOutlineClose } from "react-icons/ai";
+import GoogleLoginComponent from "./Googlelogin";
 
 export default function ComposedTextField() {
   const [name, setName] = React.useState(" ");
@@ -22,7 +24,10 @@ export default function ComposedTextField() {
   return (
     <section className="signup">
       <div className="signup_contents">
-        <h1>Welcome</h1>
+        <div className="title">
+          <AiOutlineClose />
+          <h1>Welcome</h1>
+        </div>
         <Box
           component="form"
           sx={{
@@ -100,7 +105,14 @@ export default function ComposedTextField() {
               </>
             }
           />
+          <div className="button">
+            <button type="submit">Sign Up</button>
+          </div>
         </Box>
+      </div>
+      <div className="other_signup">
+        <div className="divider">OR SIGN UP WITH</div>
+        <div className="google_signup">{/* <GoogleLoginComponent /> */}</div>
       </div>
     </section>
   );
