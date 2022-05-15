@@ -37,7 +37,7 @@ const Home = () => {
                 </Typography>
                 {!medium && (
                   <Box sx={{ marginTop: "20px" }}>
-                    <Button variant="contained" component={Link} to="/order">
+                    <Button variant="contained" component={Link} to="/signup">
                       Get Started
                     </Button>
                   </Box>
@@ -63,7 +63,7 @@ const Home = () => {
                     variant="contained"
                     fullWidth
                     component={Link}
-                    to="/order"
+                    to="/signup"
                   >
                     Get Started
                   </Button>

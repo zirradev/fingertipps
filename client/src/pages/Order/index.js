@@ -39,9 +39,10 @@ const Order = () => {
                   label="Location"
                   onChange={handleChange}
                 >
-                  <MenuItem value="caf-1">Cafetria 1</MenuItem>
-                  <MenuItem value="caf-2">Cafetria 2</MenuItem>
+                  <MenuItem value="caf-1">Cafeteria 1</MenuItem>
+                  <MenuItem value="caf-2">Cafeteria 2</MenuItem>
                   <MenuItem value="captain-cook">Captain Cook</MenuItem>
+                  <MenuItem value="caf-3">Med Cafe</MenuItem>
                   <MenuItem value="staff-caf">Staff Cafeteria</MenuItem>
                 </Select>
               </FormControl>

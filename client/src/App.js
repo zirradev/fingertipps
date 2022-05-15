@@ -14,7 +14,7 @@ import Checkout from "./pages/Checkout";
 let outerTheme = createTheme({
   palette: {
     primary: {
-      main: "#d0320f",
+      main: "#ED1C00",
     },
     secondary: {
       main: "#fff",
