@@ -15,7 +15,7 @@ import { CgUserList } from "react-icons/cg";
 
 import TabSection from "./TabSection";
 
-export const Order = () => {
+const Order = () => {
   const theme = useTheme();
   const medium = useMediaQuery(theme.breakpoints.down("md"));
   const [location, setLocation] = React.useState("");
@@ -68,3 +68,5 @@ export const Order = () => {
     </Box>
   );
 };
+
+export default Order;
