@@ -11,15 +11,35 @@ import Checkbox from "@mui/material/Checkbox";
 import "./Signup.css";
 import { AiOutlineClose } from "react-icons/ai";
 import GoogleLoginComponent from "./Googlelogin";
+import Button from "@mui/material/Button";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import IconButton from "@mui/material/IconButton";
 
 export default function ComposedTextField() {
-  const [name, setName] = React.useState(" ");
-  const [email, setEmail] = React.useState(" ");
-  const [phone, setPhone] = React.useState("");
-  const [password, setPassword] = React.useState(" ");
-  const [checked, setChecked] = React.useState(true);
+  const [values, setValues] = React.useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    showPassword: false,
+  });
+  const [checked, setChecked] = React.useState(false);
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+    setChecked(event.target.checked);
+  };
 
-  const handleChange = (event) => {};
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <section className="signup">
@@ -41,7 +61,7 @@ export default function ComposedTextField() {
             <InputLabel htmlFor="component-outlined">Name</InputLabel>
             <OutlinedInput
               id="component-outlined"
-              value={name}
+              value={values.name}
               onChange={handleChange}
               label="Name"
             />
@@ -53,7 +73,7 @@ export default function ComposedTextField() {
             <InputLabel htmlFor="component-outlined">Email</InputLabel>
             <OutlinedInput
               id="component-outlined"
-              value={email}
+              value={values.email}
               onChange={handleChange}
               label="Email"
               type="email"
@@ -62,26 +82,42 @@ export default function ComposedTextField() {
               Required*
             </FormHelperText>
           </FormControl>
-          <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Phone</InputLabel>
+          <FormControl fullWidth sx={{ m: 1 }}>
+            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
             <OutlinedInput
-              id="component-outlined"
-              value={phone}
-              onChange={handleChange}
-              label="Phone"
-              type="tel"
+              id="outlined-adornment-amount"
+              value={values.phone}
+              onChange={handleChange("amount")}
+              startAdornment={
+                <InputAdornment position="start">+234</InputAdornment>
+              }
+              label="Amount"
             />
-            <FormHelperText>Required*</FormHelperText>
           </FormControl>
-          <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Password</InputLabel>
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">
+              Password
+            </InputLabel>
             <OutlinedInput
-              id="component-outlined"
-              value={password}
-              onChange={handleChange}
+              id="outlined-adornment-password"
+              type={values.showPassword ? "text" : "password"}
+              value={values.password}
+              onChange={handleChange("password")}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
               label="Password"
-              type="password"
             />
+
             <FormHelperText id="component-helper-text">
               Required*
             </FormHelperText>
@@ -106,7 +142,9 @@ export default function ComposedTextField() {
             }
           />
           <div className="button">
-            <button type="submit">Sign Up</button>
+            <Button variant="contained" sx={{ background: "var(--color)" }}>
+              Sign Up
+            </Button>
           </div>
         </Box>
       </div>
