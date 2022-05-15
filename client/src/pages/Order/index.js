@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CgUserList } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 import TabSection from "./TabSection";
 
@@ -30,10 +31,10 @@ const Order = () => {
           <Box display="flex" justifyContent="space-between">
             <Box>
               <FormControl sx={{ minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-label">Location</InputLabel>
+                <InputLabel id="select-location-label">Location</InputLabel>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  labelId="select-location-label"
+                  id="select-location"
                   value={location}
                   label="Location"
                   onChange={handleChange}
@@ -54,7 +55,7 @@ const Order = () => {
               <IconButton>
                 <AiOutlineShoppingCart />
               </IconButton>
-              <IconButton>
+              <IconButton component={Link} to="/profile">
                 <CgUserList />
               </IconButton>
             </Box>
