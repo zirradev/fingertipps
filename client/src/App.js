@@ -4,14 +4,21 @@ import { ThemeProvider, createTheme } from "@mui/material/styles/";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
+import { responsiveFontSizes } from "@mui/material/styles/";
+import Checkout from "./pages/Checkout";
 
-const outerTheme = createTheme({
+let outerTheme = createTheme({
   palette: {
+    primary: {
+      main: "#000",
+    },
     secondary: {
       main: "#fff",
     },
   },
 });
+
+outerTheme = responsiveFontSizes(outerTheme);
 
 function App() {
   return (
@@ -21,6 +28,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/Signup" element={<Signup />} />
+          <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

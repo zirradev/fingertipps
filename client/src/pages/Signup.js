@@ -17,9 +17,7 @@ export default function ComposedTextField() {
   const [password, setPassword] = React.useState(" ");
   const [checked, setChecked] = React.useState(true);
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
+  const handleChange = (event) => {};
 
   return (
     <section className="signup">
@@ -84,10 +82,10 @@ export default function ComposedTextField() {
             </FormHelperText>
           </FormControl>
           <FormControlLabel
-            control={<Checkbox />}
+            control={<Checkbox value={checked} />}
             label={
               <>
-                Accept{" "}
+                Agree with{" "}
                 <a
                   href="#"
                   style={{ textDecoration: "none", color: "var(--color-blue)" }}
