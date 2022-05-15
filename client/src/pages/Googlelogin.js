@@ -3,6 +3,7 @@
     - Add a button to the page to allow the user to log in with Google
     - this is the manual attempt at doing this
     I think there is a better way of doing it with google api directly
+    https://www.freakyjolly.com/google-signin-login-button-in-react-js-example-using-react-google_login-package/
 */
 
 import React, { Component } from "react";

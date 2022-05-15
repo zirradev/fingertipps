@@ -154,7 +154,11 @@ export default function ComposedTextField() {
               }
             />
             <div className="button">
-              <Button variant="contained" sx={{ background: "var(--color)" }}>
+              <Button
+                variant="contained"
+                sx={{ background: "var(--color)" }}
+                type="submit"
+              >
                 Sign Up
               </Button>
             </div>
