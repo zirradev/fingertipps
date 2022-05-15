@@ -62,7 +62,7 @@ export default function ComposedTextField() {
             <OutlinedInput
               id="component-outlined"
               value={values.name}
-              onChange={handleChange}
+              onChange={handleChange("name")}
               label="Name"
             />
             <FormHelperText id="component-helper-text">
@@ -74,7 +74,7 @@ export default function ComposedTextField() {
             <OutlinedInput
               id="component-outlined"
               value={values.email}
-              onChange={handleChange}
+              onChange={handleChange("email")}
               label="Email"
               type="email"
             />
@@ -83,18 +83,21 @@ export default function ComposedTextField() {
             </FormHelperText>
           </FormControl>
           <FormControl fullWidth sx={{ m: 1 }}>
-            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+            <InputLabel htmlFor="component-outlined">Tel</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-amount"
+              id="component-outlined"
               value={values.phone}
-              onChange={handleChange("amount")}
+              onChange={handleChange("phone")}
               startAdornment={
                 <InputAdornment position="start">+234</InputAdornment>
               }
               label="Amount"
             />
+            <FormHelperText id="component-helper-text">
+              Required*
+            </FormHelperText>
           </FormControl>
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+          <FormControl sx={{ m: 1 }} variant="outlined" fullWidth>
             <InputLabel htmlFor="outlined-adornment-password">
               Password
             </InputLabel>
@@ -136,7 +139,7 @@ export default function ComposedTextField() {
                   href="#"
                   style={{ textDecoration: "none", color: "var(--color-blue)" }}
                 >
-                  terms and conditions
+                  Terms & Conditions
                 </a>
               </>
             }
