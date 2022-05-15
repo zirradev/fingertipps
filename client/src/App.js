@@ -1,17 +1,26 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material/styles/";
-import Profile from "./pages/Profile";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles/";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
 
-const outerTheme = createTheme({
+let outerTheme = createTheme({
   palette: {
+    primary: {
+      main: "#000",
+    },
     secondary: {
       main: "#fff",
     },
   },
 });
+
+outerTheme = responsiveFontSizes(outerTheme);
 
 function App() {
   return (
