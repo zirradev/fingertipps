@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
+import GoogleButton from "react-google-button";
 
 export default function ComposedTextField() {
   const [values, setValues] = React.useState({
@@ -83,7 +84,7 @@ export default function ComposedTextField() {
             </FormHelperText>
           </FormControl>
           <FormControl fullWidth sx={{ m: 1 }}>
-            <InputLabel htmlFor="component-outlined">Tel</InputLabel>
+            <InputLabel htmlFor="component-outlined">Phone</InputLabel>
             <OutlinedInput
               id="component-outlined"
               value={values.phone}
@@ -91,7 +92,7 @@ export default function ComposedTextField() {
               startAdornment={
                 <InputAdornment position="start">+234</InputAdornment>
               }
-              label="Amount"
+              label="Phone"
             />
             <FormHelperText id="component-helper-text">
               Required*
@@ -153,7 +154,18 @@ export default function ComposedTextField() {
       </div>
       <div className="other_signup">
         <div className="divider">OR SIGN UP WITH</div>
-        <div className="google_signup">{/* <GoogleLoginComponent /> */}</div>
+        <div className="google_signup">
+          {/* <GoogleLoginComponent /> */}
+          <center>
+            <GoogleButton
+              onClick={() => {
+                alert("Google button clicked");
+              }}
+              type="light"
+              label="Sign Up with Google"
+            />
+          </center>
+        </div>
       </div>
     </section>
   );
