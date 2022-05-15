@@ -1,10 +1,25 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles/";
+import Home from "./pages/Home";
+
+const outerTheme = createTheme({
+  palette: {
+    secondary: {
+      main: "#fff",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <h1>Finger tips</h1>
-    </div>
+    <ThemeProvider theme={outerTheme}>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
