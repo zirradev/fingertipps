@@ -58,16 +58,28 @@ const Home = () => {
             >
               <FoodCard />
               {medium && (
-                <Box sx={{ marginTop: "20px", padding: "20px" }}>
-                  <Button
-                    variant="contained"
-                    fullWidth
-                    component={Link}
-                    to="/signup"
-                  >
-                    Get Started
-                  </Button>
-                </Box>
+                <>
+                  <Box sx={{ marginTop: "20px", padding: "20px" }}>
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      component={Link}
+                      to="/signup"
+                    >
+                      Sign Up
+                    </Button>
+                  </Box>
+                  <Box sx={{ marginTop: "none", padding: "20px" }}>
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      component={Link}
+                      to="/signin"
+                    >
+                      Sign In
+                    </Button>
+                  </Box>
+                </>
               )}
             </Box>
           </Grid>
