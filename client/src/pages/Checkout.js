@@ -59,6 +59,7 @@ const TopSection = styled.div`
 `
 
 const MiddleSection = styled.div`
+    margin-bottom: 40px;
     background-color: #eee;
     display: flex;
     gap: 14px;
