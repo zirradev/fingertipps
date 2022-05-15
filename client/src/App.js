@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles/";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 const outerTheme = createTheme({
   palette: {
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
         </Routes>
         <Routes>
-          <Route exact path="/Signin" element={<Signin />} />
+          <Route exact path="/Signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

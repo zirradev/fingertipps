@@ -1,13 +1,18 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import "./Signup.css";
 
-const Signin = () => {
+const Signup = () => {
   return (
     <>
-      <section className="sign-in">
+      <section className="sign_up">
         <div className="container">
-          <div className="sign-in-content">
-            <div className="sign-in-content-title">
+          {/* <div className="close" onClick={() => setVisible(false)}> */}
+          <div className="close">
+            <span></span>
+            <span></span>
+          </div>
+          <div className="sign_in_content">
+            <div className="sign_in_content-title">
               <h1>Welcome</h1>
             </div>
             <div className="sign-in-content-form">
@@ -44,7 +49,7 @@ const Signin = () => {
                       htmlFor="customCheck1"
                     >
                       Agree with{" "}
-                      <a href="" className="terms">
+                      <a href="#home" className="terms">
                         terms & conditions
                       </a>
                     </label>
@@ -56,11 +61,11 @@ const Signin = () => {
               </form>
             </div>
           </div>
-          <div className="google_signin"></div>
+          <div className="sign_others"></div>
         </div>
       </section>
     </>
   );
 };
 
-export default Signin;
+export default Signup;
