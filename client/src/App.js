@@ -8,11 +8,12 @@ import {
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
+import { Order } from "./pages/Order";
 
 let outerTheme = createTheme({
   palette: {
     primary: {
-      main: "#000",
+      main: "#d0320f",
     },
     secondary: {
       main: "#fff",
@@ -28,12 +29,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-        </Routes>
-        <Routes>
-          <Route exact path="/profile" element={<Profile />} />
-        </Routes>
-        <Routes>
           <Route exact path="/Signup" element={<Signup />} />
+          <Route exact path="/order" element={<Order />} />
+          <Route exact path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
