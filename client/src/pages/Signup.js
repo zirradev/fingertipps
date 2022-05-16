@@ -72,6 +72,7 @@ export default function ComposedTextField() {
                 value={values.name}
                 onChange={handleChange("name")}
                 label="Name"
+                required
               />
               <FormHelperText id="component-helper-text">
                 Required*
@@ -85,6 +86,7 @@ export default function ComposedTextField() {
                 onChange={handleChange("email")}
                 label="Email"
                 type="email"
+                required
               />
               <FormHelperText id="component-helper-text">
                 Required*
@@ -100,6 +102,7 @@ export default function ComposedTextField() {
                   <InputAdornment position="start">+234</InputAdornment>
                 }
                 label="Phone"
+                required
               />
               <FormHelperText id="component-helper-text">
                 Required*
@@ -127,6 +130,7 @@ export default function ComposedTextField() {
                   </InputAdornment>
                 }
                 label="Password"
+                required
               />
 
               <FormHelperText id="component-helper-text">
