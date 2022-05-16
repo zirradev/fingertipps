@@ -4,7 +4,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 
 function Checkout() {
-    const [tab, handleTab] = React.useState()
+    const [tab, setTab] = React.useState()
+
+
 
   return (
     <section>
@@ -102,4 +104,4 @@ const BottomSection = styled.div`
         }
 `
 
-export default Checkout
+export default Checkout;
