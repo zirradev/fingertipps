@@ -35,8 +35,8 @@ function App() {
           <Route exact path="/store" element={<Store />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/order" element={<Order />} />
-          <Route exact path="/Signup" element={<Signup />} />
-          <Route exact path="/Signin" element={<Signin />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
