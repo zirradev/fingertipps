@@ -10,11 +10,12 @@ import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import Order from "./pages/Order";
 import Checkout from "./pages/Checkout";
+import Signin from "./pages/Signin";
 
 let outerTheme = createTheme({
   palette: {
     primary: {
-      main: "#d0320f",
+      main: "#ED1C00",
     },
     secondary: {
       main: "#fff",
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/order" element={<Order />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/Signup" element={<Signup />} />
+          <Route exact path="/Signin" element={<Signin />} />
           <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>

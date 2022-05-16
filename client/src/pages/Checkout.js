@@ -6,8 +6,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 function Checkout() {
     const [tab, setTab] = React.useState()
 
-
-
   return (
     <section>
         <TopSection>
