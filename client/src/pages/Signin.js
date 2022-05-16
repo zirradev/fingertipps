@@ -23,6 +23,7 @@ const Signin = () => {
     email: "",
     password: "",
   });
+  const [checked, setChecked] = React.useState(false);
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -44,13 +45,16 @@ const Signin = () => {
             <a href="/">
               <AiOutlineClose />
             </a>
-            <h1>Welcome</h1>
+            <h1>Look who it is!</h1>
           </div>
           <Box
             component="form"
             sx={{
               "& > :not(style)": { m: 1 },
             }}
+            noValidate
+            autoComplete="off"
+            className="signin-form"
           >
             <FormControl fullWidth>
               <InputLabel htmlFor="component-outlined">Email</InputLabel>
@@ -60,6 +64,7 @@ const Signin = () => {
                 onChange={handleChange("email")}
                 label="Email"
                 type="email"
+                required
               />
               <FormHelperText id="component-helper-text">
                 Required*
@@ -87,24 +92,50 @@ const Signin = () => {
                   </InputAdornment>
                 }
                 label="Password"
+                required
               />
 
               <FormHelperText id="component-helper-text">
                 Required*
               </FormHelperText>
             </FormControl>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  value={checked}
+                  style={{ color: "var(--color-blue)" }}
+                />
+              }
+              label={
+                <>
+                  <div
+                    className="checklabel"
+                    style={{
+                      color: "#9C9C9C",
+                      fontSize: "16px",
+                      lineHeight: "20px",
+                      fontWeight: "normal",
+                      fontfamily: "Montserrat, sans-serif",
+                    }}
+                  >
+                    Remember me
+                  </div>
+                </>
+              }
+            />
             <Button
               variant="contained"
               color="primary"
               sx={{
                 width: "100%",
                 height: "50px",
-                fontSize: "1.5rem",
-                fontWeight: "bold",
-                borderRadius: "0",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                borderRadius: "8px",
                 border: "1px solid var(--color)",
                 backgroundColor: "var(--color)",
-                color: "white",
+                color: "#fff",
                 "&:hover": {
                   backgroundColor: "var(--color)",
                   color: "white",
@@ -114,17 +145,29 @@ const Signin = () => {
               Sign In
             </Button>
             <div className="signin_social">
-              <div className="signin_social_text">
-                <p>Or Sign In With</p>
-              </div>
+              <div className="divider">Or Sign In With</div>
               <div className="signin_social_icons">
-                <GoogleButton
-                  onClick={() => {
-                    alert("Google button clicked");
-                  }}
-                  type="light"
-                  label="Sign Up with Google"
-                />
+                <center>
+                  <GoogleButton
+                    onClick={() => {
+                      alert("Google button clicked");
+                    }}
+                    type="light"
+                    label="Sign Up with Google"
+                  />
+                </center>
+              </div>
+            </div>
+            <div className="sufp">
+              <div className="sigup">
+                <a href="/signup">
+                  <span>Sign Up</span>
+                </a>
+              </div>
+              <div className="fpassword">
+                <a href="/forgotpassword">
+                  <span>Forgot Password?</span>
+                </a>
               </div>
             </div>
           </Box>

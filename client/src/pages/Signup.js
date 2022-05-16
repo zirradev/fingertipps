@@ -155,16 +155,27 @@ export default function ComposedTextField() {
                 </>
               }
             />
-            <div className="button">
-              <Button
-                variant="contained"
-                sx={{ background: "var(--color)" }}
-                type="submit"
-                onClick={() => navigate("/store")}
-              >
-                Sign Up
-              </Button>
-            </div>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                width: "100%",
+                height: "50px",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                borderRadius: "8px",
+                border: "1px solid var(--color)",
+                backgroundColor: "var(--color)",
+                color: "#fff",
+                "&:hover": {
+                  backgroundColor: "var(--color)",
+                  color: "white",
+                },
+              }}
+            >
+              Sign Up
+            </Button>
           </Box>
         </div>
         <div className="other_signup">
