@@ -17,8 +17,10 @@ import GoogleLoginComponent from "./Googlelogin";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import GoogleButton from "react-google-button";
+import { useNavigate } from "react-router-dom";
 
 export default function ComposedTextField() {
+  const navigate = useNavigate();
   const [values, setValues] = React.useState({
     name: "",
     email: "",
@@ -158,6 +160,7 @@ export default function ComposedTextField() {
                 variant="contained"
                 sx={{ background: "var(--color)" }}
                 type="submit"
+                onClick={() => navigate("/store")}
               >
                 Sign Up
               </Button>

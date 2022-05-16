@@ -8,9 +8,10 @@ import {
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
-import Order from "./pages/Order";
+import Store from "./pages/Store";
 import Checkout from "./pages/Checkout";
 import Signin from "./pages/Signin";
+import Order from "./pages/Order";
 
 let outerTheme = createTheme({
   palette: {
@@ -31,8 +32,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/order" element={<Order />} />
+          <Route exact path="/store" element={<Store />} />
           <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/order" element={<Order />} />
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="/Signin" element={<Signin />} />
           <Route exact path="/checkout" element={<Checkout />} />

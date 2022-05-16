@@ -1,69 +1,85 @@
 import React from "react";
 import {
-  Box,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Container,
-  IconButton,
-  useTheme,
   useMediaQuery,
+  useTheme,
+  Box,
+  Container,
+  Button,
+  Typography,
+  TableContainer,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  styled,
 } from "@mui/material";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { CgUserList } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
-import TabSection from "./TabSection";
+const LineTypography = styled(Typography)({
+  borderBottom: "1px solid #efefef",
+  padding: "10px 0px",
+});
 
 const Order = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const medium = useMediaQuery(theme.breakpoints.down("md"));
-  const [location, setLocation] = React.useState("");
-
-  const handleChange = (event) => {
-    setLocation(event.target.value);
-  };
   return (
     <Box>
       <Container>
         <Box sx={{ padding: !medium ? "20px" : "20px 0px" }}>
-          <Box display="flex" justifyContent="space-between">
-            <Box>
-              <FormControl sx={{ minWidth: 120 }}>
-                <InputLabel id="select-location-label">Location</InputLabel>
-                <Select
-                  labelId="select-location-label"
-                  id="select-location"
-                  value={location}
-                  label="Location"
-                  onChange={handleChange}
-                >
-                  <MenuItem value="caf-1">Cafeteria 1</MenuItem>
-                  <MenuItem value="caf-2">Cafeteria 2</MenuItem>
-                  <MenuItem value="captain-cook">Captain Cook</MenuItem>
-                  <MenuItem value="caf-3">Med Cafe</MenuItem>
-                  <MenuItem value="staff-caf">Staff Cafeteria</MenuItem>
-                </Select>
-              </FormControl>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box display="flex" sx={{ gap: 2 }}>
+              <Button variant="outlined" onClick={() => navigate(-1)}>
+                <BiArrowBack />
+              </Button>
+              <Box>
+                <Typography variant="h5">Order</Typography>
+                <Typography component="p">#456G3HT3</Typography>
+              </Box>
             </Box>
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              sx={{ gap: "10px" }}
-            >
-              <IconButton>
-                <AiOutlineShoppingCart />
-              </IconButton>
-              <IconButton component={Link} to="/profile">
-                <CgUserList />
-              </IconButton>
+            <Box>
+              <Typography component="p">23 Apr 2022</Typography>
             </Box>
           </Box>
-
           <Box>
-            <TabSection />
+            <Box>
+              <TableContainer>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>List</TableCell>
+                      <TableCell>unit</TableCell>
+                      <TableCell>Price</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Jollof Rice</TableCell>
+                      <TableCell>1</TableCell>
+                      <TableCell>100</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Box>
+
+            <Box sx={{ my: 5 }}>
+              <LineTypography variant="h5">Delivery</LineTypography>
+              <LineTypography component="p">Cafeteria 1</LineTypography>
+              <LineTypography component="p">
+                Male Hostel 1 (Kuvuki)
+              </LineTypography>
+              <LineTypography component="p" sx={{ color: "var(--color-good)" }}>
+                Pay on Delivery
+              </LineTypography>
+            </Box>
           </Box>
         </Box>
       </Container>
