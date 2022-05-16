@@ -10,8 +10,8 @@
 
 # production
 /build
-pakage-lock.json
-yarn.lock
+/package-lock.json
+/yarn.lock
 
 # misc
 .env

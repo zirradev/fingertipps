@@ -21,11 +21,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -46,30 +42,45 @@ function a11yProps(index) {
 }
 
 const FoodPanel = () => {
+  const [quantity, setQuantity] = React.useState(1);
+
+  const handleChange = (action) => {
+    if (quantity > 0 && quantity <= 20) {
+      if (action === "add") {
+        quantity !== 20 && setQuantity((prev) => prev + 1);
+      } else {
+        quantity !== 1 && setQuantity((prev) => prev - 1);
+      }
+    }
+  };
+
   return (
     <Box
       display="flex"
       justifyContent="space-between"
       alignItems="center"
-      sx={{ my: 3 }}
+      sx={{ my: 2, borderBottom: "1px solid #efefef", py: 2 }}
     >
-      <Box>
+      <Box sx={{ textAlign: "center" }}>
         <Typography component="p">Jollof Rice</Typography>
-        <Box>
-          <Button variant="outlined">
+        <Box sx={{ mt: 1 }}>
+          <Button variant="outlined" onClick={() => handleChange("minus")}>
             <FiMinus />
           </Button>
-          <span style={{ padding: "20px" }}>1</span>
-          <Button variant="outlined">
+          <span style={{ padding: "20px" }}>{quantity}</span>
+          <Button variant="outlined" onClick={() => handleChange("add")}>
             <IoAdd />
           </Button>
         </Box>
       </Box>
-      <Box>
+      <Box sx={{ textAlign: "center" }}>
         <Typography component="p">
           <Currency />
           100
         </Typography>
+        <Button variant="contained" sx={{ mt: 1 }}>
+          Add
+        </Button>
       </Box>
     </Box>
   );
@@ -83,7 +94,7 @@ export default function TabSection() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", mt: 5 }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
@@ -99,28 +110,28 @@ export default function TabSection() {
       <TabPanel value={value} index={0}>
         {Array(10)
           .fill()
-          .map((index) => (
+          .map((_, index) => (
             <FoodPanel key={index} />
           ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
         {Array(2)
           .fill()
-          .map((index) => (
+          .map((_, index) => (
             <FoodPanel key={index} />
           ))}
       </TabPanel>
       <TabPanel value={value} index={2}>
         {Array(5)
           .fill()
-          .map((index) => (
+          .map((_, index) => (
             <FoodPanel key={index} />
           ))}
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={3}>
         {Array(15)
           .fill()
-          .map((index) => (
+          .map((_, index) => (
             <FoodPanel key={index} />
           ))}
       </TabPanel>
