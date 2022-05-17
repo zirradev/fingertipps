@@ -142,6 +142,8 @@ export default function ComposedTextField() {
                 <Checkbox
                   value={checked}
                   style={{ color: "var(--color-blue)" }}
+                  onChange={handleChange("checked")}
+                  required
                 />
               }
               label={
