@@ -213,6 +213,7 @@ export default function ComposedTextField() {
                   variant="contained"
                   color="primary"
                   type="submit"
+                  disabled={!values.checked}
                   sx={{
                     width: "100%",
                     height: "50px",
