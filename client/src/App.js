@@ -12,6 +12,7 @@ import Store from "./pages/Store";
 import Checkout from "./pages/Checkout";
 import Signin from "./pages/Signin";
 import Order from "./pages/Order";
+import Forgotpassword from "./pages/Forgotpassword";
 
 let outerTheme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/order" element={<Order />} />
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="/Signin" element={<Signin />} />
+          <Route exact path="/fpassword" element={<Forgotpassword />} />
           <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>

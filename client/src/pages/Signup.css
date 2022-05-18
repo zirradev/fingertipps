@@ -44,6 +44,23 @@
     margin-left: 10px
 }
 
+
+.instead {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.instead a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ED1C00;
+    cursor: pointer;
+    text-align: center;
+}
+
 @media only screen and (min-width: 500px) {
     .signup {
         height: 100vh;

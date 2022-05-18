@@ -199,6 +199,9 @@ export default function ComposedTextField() {
             </center>
           </div>
         </div>
+        <div className="instead">
+          <a href="/signin">I have an account? Sign in instead</a>
+        </div>
       </div>
     </section>
   );

@@ -165,7 +165,7 @@ const Signin = () => {
                 </a>
               </div>
               <div className="fpassword">
-                <a href="/forgotpassword">
+                <a href="/fpassword">
                   <span>Forgot Password?</span>
                 </a>
               </div>
