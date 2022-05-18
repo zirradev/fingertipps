@@ -37,11 +37,11 @@ const Resetpassword = () => {
         <div className="signin_contents">
           <div className="title">
             <div className="close">
-              <a href="/">
+              <a href="/signin">
                 <AiOutlineClose />
               </a>
             </div>
-            <h1>Look who it is!</h1>
+            <h1>New Password</h1>
           </div>
           <Box
             component="form"

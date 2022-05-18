@@ -14,7 +14,7 @@ import Signin from "./pages/Signin";
 import Order from "./pages/Order";
 import Forgotpassword from "./pages/Forgotpassword";
 import Emailsent from "./pages/Emailsent";
-import Resetpassword from "./pages/Resetpassword";
+import Resetpassword from "./pages/Resetpassword.js";
 
 let outerTheme = createTheme({
   palette: {
