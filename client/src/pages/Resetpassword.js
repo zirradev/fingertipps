@@ -58,7 +58,7 @@ const Resetpassword = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
-                type={values.showPassword ? "text" : "passwordr"}
+                type={values.showPassword ? "text" : "password"}
                 value={values.passwordr}
                 onChange={handleChange("passwordr")}
                 endAdornment={
