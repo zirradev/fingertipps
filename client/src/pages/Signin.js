@@ -42,9 +42,11 @@ const Signin = () => {
       <div className="signpage">
         <div className="signin_contents">
           <div className="title">
-            <a href="/">
-              <AiOutlineClose />
-            </a>
+            <div className="close">
+              <a href="/">
+                <AiOutlineClose />
+              </a>
+            </div>
             <h1>Look who it is!</h1>
           </div>
           <Box
