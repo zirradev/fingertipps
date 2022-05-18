@@ -7,16 +7,16 @@ const UserSchema = new mongoose.Schema(
       unique: true,
       required: true,
     },
-    firstname: {
+    name: {
       type: String,
       required: true,
-    },
-    lastname: {
-      type: String,
     },
     password: {
       type: String,
       required: true,
+    },
+    staff: {
+      type: Object,
     },
     isAdmin: {
       type: Boolean,

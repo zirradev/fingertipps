@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const signin = async (email, password) => {
-  return await axios.post("/auth/signin");
+export const signin = async (values) => {
+  return await axios.post("/auth/signin", values);
 };
 
-export const signup = async (name, email, phone, password) => {
-  return await axios.post("/auth/signup");
+export const signup = async (values) => {
+  return await axios.post("/auth/signup", values);
 };

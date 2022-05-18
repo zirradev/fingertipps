@@ -49,10 +49,7 @@ export default function ComposedTextField() {
               email: Yup.string()
                 .email("Must be a valid email address.")
                 .required("Email Address is required"),
-              phone: Yup.number()
-                .required("Phone Number is required")
-                .min(10)
-                .max(11),
+              phone: Yup.number().required("Phone Number is required"),
               password: Yup.string().required("Password is required"),
             })}
             onSubmit={async (values) => {
