@@ -13,6 +13,8 @@ import Checkout from "./pages/Checkout";
 import Signin from "./pages/Signin";
 import Order from "./pages/Order";
 import Forgotpassword from "./pages/Forgotpassword";
+import Emailsent from "./pages/Emailsent";
+import Resetpassword from "./pages/Resetpassword";
 
 let outerTheme = createTheme({
   palette: {
@@ -39,6 +41,8 @@ function App() {
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="/Signin" element={<Signin />} />
           <Route exact path="/fpassword" element={<Forgotpassword />} />
+          <Route exact path="/emailsent" element={<Emailsent />} />
+          <Route exact path="/resetpassword" element={<Resetpassword />} />
           <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>

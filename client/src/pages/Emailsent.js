@@ -1,10 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import "./Forgotpassword.css";
+import "./Emailsent.css";
 import { FormControl, InputLabel, OutlinedInput, Button } from "@mui/material";
 import { BsArrowLeft } from "react-icons/bs";
 
-const Forgotpassword = () => {
+const Emailsent = () => {
   const [values, setValues] = React.useState({
     email: "",
   });
@@ -16,12 +16,7 @@ const Forgotpassword = () => {
       <div className="signpage">
         <div className="signin_contents">
           <div className="title">
-            <div className="close">
-              <a href="/signin">
-                <BsArrowLeft />
-              </a>
-            </div>
-            <h1>Reset Password</h1>
+            <h1>Password</h1>
           </div>
           <Box
             component="form"
@@ -32,23 +27,16 @@ const Forgotpassword = () => {
             autoComplete="off"
             className="signin-form"
           >
-            <FormControl fullWidth>
-              <InputLabel htmlFor="component-outlined">
-                Enter Email Address
-              </InputLabel>
-              <OutlinedInput
-                id="component-outlined"
-                value={values.email}
-                onChange={handleChange("email")}
-                label="Enter Email Address"
-                type="email"
-                required
-              />
-            </FormControl>
+            <div className="message">
+              <p>
+                An email has been sent to your email address. Please check your
+                email and click on the link to reset your password.
+              </p>
+            </div>
             <Button
               variant="contained"
               color="primary"
-              to="/signup"
+              to="/signin"
               sx={{
                 width: "100%",
                 height: "50px",
@@ -65,7 +53,7 @@ const Forgotpassword = () => {
                 },
               }}
             >
-              Reset
+              sign in
             </Button>
           </Box>
         </div>
@@ -74,4 +62,4 @@ const Forgotpassword = () => {
   );
 };
 
-export default Forgotpassword;
+export default Emailsent;
