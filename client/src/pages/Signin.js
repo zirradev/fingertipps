@@ -21,13 +21,17 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 import { signin } from "../APICalls/auth";
+import { useAuth } from "../context/useAuthContext";
 import "./Signin.css";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [values, setValues] = React.useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+  const { updateLoginContext } = useAuth();
   const [checked, setChecked] = React.useState(false);
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -68,7 +72,8 @@ const Signin = () => {
             onSubmit={async (values) => {
               await signin(values)
                 .then((res) => {
-                  console.log(res);
+                  updateLoginContext(res.data);
+                  navigate("/store");
                 })
                 .catch((err) => {
                   console.log(err.message);

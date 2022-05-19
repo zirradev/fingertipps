@@ -43,6 +43,17 @@ app.get("/", (req, res) => {
 });
 app.use("/api/auth", authRouter);
 
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    mesage: errorMessage,
+    stack: err.stack,
+  });
+});
+
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is running at port: ${process.env.PORT || 5000}`);
 });
