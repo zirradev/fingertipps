@@ -19,6 +19,8 @@ import {
 import { Email, Instagram, WhatsApp } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "../../context/useAuthContext";
+
 import Currency from "../../components/Currency";
 
 function TabPanel(props) {
@@ -79,6 +81,7 @@ const OrderPanel = () => {
 };
 
 const ProfileDetails = () => {
+  const { loggedInUser } = useAuth();
   const [location, setLocation] = React.useState("");
 
   const handleChange = (event) => {
@@ -89,13 +92,28 @@ const ProfileDetails = () => {
       <form>
         <Grid container spacing={2}>
           <Grid item md={6} xs={12}>
-            <TextField label="Name" type="text" fullWidth />
+            <TextField
+              label="Name"
+              type="text"
+              fullWidth
+              value={loggedInUser.name}
+            />
           </Grid>
           <Grid item md={6} xs={12}>
-            <TextField label="Email Address" type="text" fullWidth />
+            <TextField
+              label="Email Address"
+              type="text"
+              fullWidth
+              value={loggedInUser.email}
+            />
           </Grid>
           <Grid item md={6} xs={12}>
-            <TextField label="Phone" type="text" fullWidth />
+            <TextField
+              label="Phone"
+              type="text"
+              value={loggedInUser.phone}
+              fullWidth
+            />
           </Grid>
           <Grid item md={6} xs={12}>
             <FormControl sx={{ minWidth: 120 }} fullWidth>

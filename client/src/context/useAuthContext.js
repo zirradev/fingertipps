@@ -1,7 +1,10 @@
 import React from "react";
 
 const AuthContext = React.createContext({
-  loggedInUser: undefined,
+  loggedInUser:
+    typeof localStorage.getItem("user") === "object"
+      ? JSON.parse(localStorage.getItem("user"))
+      : null,
   updateLoginContext: () => null,
   logout: () => null,
 });
@@ -14,6 +17,9 @@ const AuthProvider = ({ children }) => {
   const logout = React.useCallback((data) => {
     setLoggedInUser(null);
   }, []);
+  React.useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(loggedInUser));
+  }, [loggedInUser]);
   return (
     <AuthContext.Provider value={{ loggedInUser, updateLoginContext, logout }}>
       {children}

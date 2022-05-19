@@ -5,6 +5,8 @@ import {
   createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles/";
+import { Navigate, Outlet } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
@@ -15,6 +17,7 @@ import Order from "./pages/Order";
 import Forgotpassword from "./pages/Forgotpassword";
 import Emailsent from "./pages/Emailsent";
 import Resetpassword from "./pages/Resetpassword.js";
+import { useAuth } from "./context/useAuthContext";
 
 let outerTheme = createTheme({
   palette: {
@@ -28,22 +31,32 @@ let outerTheme = createTheme({
 });
 
 outerTheme = responsiveFontSizes(outerTheme);
+const ProtectedRoute = ({ user, redirectPath = "/" }) => {
+  if (!user) {
+    return <Navigate to={redirectPath} replace />;
+  }
+  return <Outlet />;
+};
 
 function App() {
+  const { loggedInUser } = useAuth();
   return (
     <ThemeProvider theme={outerTheme}>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/store" element={<Store />} />
-          <Route exact path="/profile" element={<Profile />} />
-          <Route exact path="/order" element={<Order />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/signin" element={<Signin />} />
-          <Route exact path="/fpassword" element={<Forgotpassword />} />
-          <Route exact path="/emailsent" element={<Emailsent />} />
-          <Route exact path="/resetpassword" element={<Resetpassword />} />
-          <Route exact path="/checkout" element={<Checkout />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/fpassword" element={<Forgotpassword />} />
+          <Route path="/emailsent" element={<Emailsent />} />
+          <Route path="/resetpassword" element={<Resetpassword />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route element={<ProtectedRoute user={loggedInUser} />}>
+            <Route path="/store" element={<Store />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/order" element={<Order />} />
+          </Route>
+          <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
